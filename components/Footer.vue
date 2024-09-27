@@ -1,12 +1,12 @@
 <template>
-  <footer class="px-4 py-10 mt-10 text-white bg-black">
+  <footer class="px-6 md:px-4 py-10 pb-4 mt-10 text-white bg-gray-950">
     <div
       class="md:w-10/12 gap-8 mx-auto space-y-8 md:grid md:grid-cols-3 lg:grid-cols-5 md:space-y-0"
     >
-      <!-- Exclusive Section -->
+      <!-- Skyline Section -->
       <div class="space-y-4">
-        <h2 class="text-3xl font-semibold">Exclusive</h2>
-        <p class="mt-4 text-lg">Subscribe</p>
+        <h2 class="text-3xl font-semibold">Skyline</h2>
+        <p class="mt-4 text-lg text-red-500">Subscribe</p>
         <p class="text-base">Get 10% off your first order</p>
         <form @submit.prevent="handleSubmit" class="relative flex mt-4">
           <div class="relative">
@@ -19,7 +19,7 @@
             <button
               class="absolute text-[#FAFAFA] transform -translate-y-1/2 right-2 top-1/2"
             >
-              <Icon name="material-symbols:send" class="w-5 h-5" />
+              <Icon name="material-symbols:send" class="w-5 h-5 text-red-500" />
             </button>
           </div>
         </form>
@@ -27,20 +27,18 @@
 
       <!-- Support Section -->
       <div>
-        <h2 class="font-xl semibold text-">Support</h2>
+        <h2 class="font-semibold text-md">Support</h2>
         <address class="mt-4 text-base not-italic">
           111 Bijoy sarani, Dhaka, <br />
           DH 1515, Bangladesh.
         </address>
         <p class="mt-2 text-base">
-          <a href="mailto:exclusive@gmail.com" class="hover:underline"
-            >exclusive@gmail.com</a
+          <a href="mailto:Skyline@gmail.com" class="hover:underline"
+            >contact@skipline.com</a
           >
-        </p>
-        <p class="mt-2 text-base">
+          <br>
           <a href="tel:+8801588889999" class="hover:underline"
-            >+88015-88888-9999</a
-          >
+          >+88015-88888-9999</a>
         </p>
       </div>
 
@@ -83,20 +81,13 @@
           </div>
           <div class="col-span-1">
             <img
-              src="~/public/images/GooglePlay.png"
+              src="~/public/images/install.png"
               alt="Download on Google Play"
-              class="w-auto h-auto lg:h-12 lg:w-full md:object-fill"
-            />
-          </div>
-          <div class="col-span-1">
-            <img
-              src="~/public/images/GooglePlay.png"
-              alt="Download on App Store"
-              class="w-auto h-auto lg:h-10 lg:w-full md:object-fill"
+              class="w-auto h-20 py-1 lg:h-auto lg:w-full md:object-fill"
             />
           </div>
         </div>
-        <div class="flex mt-4 space-x-10">
+        <div class="flex mt-4 space-x-4">
           <a href="#" class="hover:underline">
             <Icon name="brandico:facebook" class="w-5 h-5" />
           </a>
@@ -112,8 +103,8 @@
         </div>
       </div>
     </div>
-    <div class="mt-8 text-center text-gray-500">
-      <p>Copyright &copy; 2024 Exclusive. All rights reserved</p>
+    <div class="mt-4 text-center text-gray-500">
+      <p>Copyright &copy; 2024 Skyline. All rights reserved</p>
     </div>
   </footer>
 </template>

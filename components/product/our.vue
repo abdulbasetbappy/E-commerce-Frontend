@@ -16,7 +16,7 @@ const props = defineProps({
 
 const responsiveOptions = {
     320: {
-        slidesPerView: 1,
+        slidesPerView: 2,
         spaceBetween: 20,
     },
     560: {
@@ -74,7 +74,7 @@ const next = () => {
             </div>
         </div>
         <div class="relative">
-            <swiper ref="swiperInstance" :slides-per-view="4" :space-between="20" :autoplay="{ delay: 3000 }"
+            <swiper ref="swiperInstance" :slides-per-view="4" :space-between="20" :autoplay="{ delay: 4000 }"
                 :loop="true" :grid="{ rows: 2, fill: 'row' }" :breakpoints="responsiveOptions" :navigation="{
                         prevEl: prevEl,
                         nextEl: nextEl,

@@ -121,15 +121,15 @@ const supports = [
         <div>
           <h3 class="text-3xl font-semibold text-dark">Our Story</h3>
           <p class="pt-8">
-            Launced in 2015, Exclusive is South Asia's premier online shopping
+            Launced in 2015, Skyline is South Asia's premier online shopping
             makterplace with an active presense in Bangladesh. Supported by wide
-            range of tailored marketing, data and service solutions, Exclusive
+            range of tailored marketing, data and service solutions, Skyline
             has 10,500 sallers and 300 brands and serves 3 millioons customers
             across the region.
           </p>
           <p class="pt-4">
-            Exclusive has more than 1 Million products to offer, growing at a
-            very fast. Exclusive offers a diverse assotment in categories
+            Skyline has more than 1 Million products to offer, growing at a
+            very fast. Skyline offers a diverse assotment in categories
             ranging from consumer.
           </p>
         </div>

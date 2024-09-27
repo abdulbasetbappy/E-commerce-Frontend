@@ -39,8 +39,8 @@ const crumbs = [{ name: "Home", link: "/" }, { name: " Contact" }];
             </div>
             <div class="space-y-2 mt-4">
               <p>Fill out our form and we will contact you within 24 hours.</p>
-              <p>Emails: customer@exclusive.com</p>
-              <p>Emails: support@exclusive.com</p>
+              <p>Emails: customer@Skyline.com</p>
+              <p>Emails: support@Skyline.com</p>
             </div>
           </div>
         </div>

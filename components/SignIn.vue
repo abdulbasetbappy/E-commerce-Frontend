@@ -20,7 +20,7 @@ const handleSubmit = () => {
 <template>
   <div class="w-full p-4 rounded-md lg:pe-36">
     <div class="text-center lg:text-left">
-      <h2 class="mb-4 text-3xl font-bold">Log in to Exclusive</h2>
+      <h2 class="mb-4 text-3xl font-bold">Log in to Skyline</h2>
       <p class="mt-6 text-base font-medium text-black">
         Enter your details below
       </p>

@@ -80,7 +80,7 @@ const next = () => {
 <template>
     <div class="container relative mx-auto mt-10">
         <div class="flex justify-between mb-4">
-            <div class="flex flex-row  gap-4">
+            <div class="flex flex-row  gap-0 md:gap-4 ">
                 <TitleWithSub title="Today's" subtitle="Flash Sales" />
 
                 <Countdown

@@ -1,11 +1,10 @@
 <script setup>
-import { ref } from 'vue';
 import { useCartsStore } from '@/stores/carts';
 
 const carts = useCartsStore();
 const whishList = ref(false);
 
-console.log(carts.items)
+console.log(carts.items) 
 
 const props = defineProps({
     product: {
@@ -26,7 +25,7 @@ const addToWishlist = () => {
 <template>
   <div class="relative">
     <div
-      class="relative flex items-center justify-center p-12 bg-gray-100 cursor-pointer group"
+      class="relative flex items-center justify-center rounded-t-md p-4 md:p-6 bg-gray-100 cursor-pointer group"
     >
       <div
         v-if="product.discount"
@@ -39,43 +38,42 @@ const addToWishlist = () => {
           <img
             :src="product.image"
             alt="Product Image"
-            class="object-contain w-full h-40"
+            class="object-contain w-full h-40 "
           />
         </NuxtLink>
       </div>
       <div class="absolute flex flex-col space-y-2 right-4 top-2">
         <button
-          class="p-2 text-black bg-white rounded-full"
+          class="p-1 flex items-end justify-center text-gray-900 bg-white rounded-full"
           @click="addToWishlist"
         >
           <Icon
             :name="
               whishList ? 'fluent:heart-28-filled' : 'fluent:heart-28-regular'
             "
-            :class="['text-xl', { 'text-primary': whishList }]"
+            :class="[ 'w-4 h-4',{ 'text-primary': whishList }]"
           />
         </button>
-        <button class="p-2 text-black bg-white rounded-full">
-          <Icon name="mdi:eye-outline" />
+        <button class="p-1 text-gray-900 bg-gray-50 flex items-end justify-center rounded-full">
+          <Icon name="mdi:eye-outline" class="w-4 h-4" />
         </button>
       </div>
       <div
         class="absolute bottom-0 left-0 right-0 flex items-center justify-center text-white transition-opacity duration-300 bg-black opacity-0 bg-opacity-90 group-hover:opacity-100"
       >
         <button class="w-full py-2" @click="addCart(product)">
-          Add To Cart ({{ carts.products[product.id] }})
-        {{product.id}}
+          Add To Cart 
         </button>
       </div>
     </div>
     <NuxtLink :to="`/product/${product.id}`">
-      <div class="mt-4 text-left">
+      <div class="p-2 rounded-b-md  bg-gray-50 text-left">
         <h3 class="text-lg font-semibold">{{ product.name }}</h3>
-        <div class="flex items-center gap-4 mt-2">
-          <div class="text-primary">{{ product.price }}</div>
-          <div class="line-through text-secondary">{{ product.prevPrice }}</div>
+        <div class="flex items-end gap-2">
+          <div class="text-primary font-semibold text-lg"> ${{ product.price }}</div>
+          <div class="line-through text-secondary text-xs md:text-sm">${{ product.prevPrice }}</div>
         </div>
-        <div class="flex items-center mt-2">
+        <div class="flex items-center">
           <Rating :rating="product.rating" />
           <span class="ml-2 text-sm text-gray-500"
             >({{ product.ratingCount }})</span

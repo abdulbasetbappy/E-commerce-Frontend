@@ -1,7 +1,6 @@
 <script setup>
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { onMounted, ref } from "vue";
 
 const props = defineProps({
     title: String,
@@ -11,7 +10,7 @@ const props = defineProps({
 
 const responsiveOptions = {
     320: {
-        slidesPerView: 2,
+        slidesPerView: 3,
         spaceBetween: 16,
     },
     560: {
@@ -71,11 +70,12 @@ const next = () => {
             </div>
         </div>
         <div class="relative w-full">
-            <swiper ref="carousel" 
+            <swiper 
+                ref="carousel" 
                 :slides-per-view="7"
                 space-between="10"
                 :breakpoints="responsiveOptions"
-                :autoplay="{ delay: 2500 }" 
+                :autoplay="{ delay: 4500 }" 
                 :loop="true"
                 :slidesPerGroup = 4
                 :navigation="{
@@ -84,7 +84,7 @@ const next = () => {
                     }" :modules="[Pagination, Navigation, Autoplay]" class="mySwiper w-full">
                 <swiper-slide v-for="(item, index) in items" :key="index">
                     <NuxtLink :to="`/category/${item.id}`">
-                        <div class="flex flex-col items-center justify-center border mb-6 py-2 text-center rounded-sm  hover:bg-primary hover:text-light">
+                        <div class="flex flex-col items-center justify-center border mb-4 w-28 md:w-32 h-32 py-2 text-center rounded-md hover:bg-primary hover:text-light">
                             <Icon :name="item.icon" class="mb-2 text-4xl" />
                             <span>{{ item.label }}</span>
                         </div>

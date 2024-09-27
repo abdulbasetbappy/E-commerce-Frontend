@@ -19,6 +19,7 @@ const brands = ref([
   { id: 2, name: "Brand 2", logo: "/images/Google_2015_logo.svg" },
   { id: 6, name: "Brand 3", logo: "/images/Logo_NIKE.svg" },
   { id: 8, name: "Brand 3", logo: "/images/Samsung_logo.svg" },
+  { id: 8, name: "Brand 3", logo: "/images/Samsung_logo.svg" },
   // Add more brands as needed
 ]);
 </script>
@@ -37,20 +38,20 @@ const brands = ref([
           clickable: true,
         }"
         :autoplay="{
-          delay: 2500,
+          delay: 3500,
           disableOnInteraction: false,
         }"
         :breakpoints="{
           '300': {
-            slidesPerView: 4,
+            slidesPerView: 2,
             spaceBetween: 20,
           },
           '768': {
-            slidesPerView: 4,
+            slidesPerView: 2,
             spaceBetween: 20,
           },
           '1024': {
-            slidesPerView: 6,
+            slidesPerView: 5,
             spaceBetween: 20,
           },
         }"
@@ -59,7 +60,7 @@ const brands = ref([
       >
         <swiper-slide class="" v-for="brand in brands" :key="brand.id">
          <div class="p-4 border">
-           <img :src="brand.logo" class="cursor-pointer mx-auto object-contain flex items-center justify-center" /></div>
+           <img :src="brand.logo" class="cursor-pointer grayscale hover:grayscale-0 mx-auto object-contain flex items-center justify-center" /></div>
         </swiper-slide>
       </swiper>
     </div>

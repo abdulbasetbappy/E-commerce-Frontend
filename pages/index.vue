@@ -42,15 +42,15 @@ try {
 
       <FeaturesCategories :items="categories" />
 
-      <div class="flex items-center justify-between mb-8 text-left mt-16">
+      <div class="flex items-center justify-between  mb-4 md:mb-8  text-left mt-16">
         <TitleWithSub title="This Month" subtitle="Best Selling Products" />
         <NuxtLink to="/productPage/asdfasdf">
           <Button class="w-32"> View All </Button>
         </NuxtLink>
       </div>
-      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div class="grid grid-cols-2 gap-6 md:grid-cols-2 lg:grid-cols-4">
         <ProductCard
-          class="mt-8 md:mt-10"
+          class="mt-4 md:mt-10"
           v-for="product in products.slice(0, 8)"
           :key="product.id"
           :product="product"

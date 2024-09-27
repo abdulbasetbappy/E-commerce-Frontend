@@ -23,7 +23,7 @@ export default defineEventHandler((event) => {
         },
         {
             id: 3,
-            name: "RGB liquid CPU Cooler",
+            name: "RGB liquid Cooler",
             image: "/images/pro-3.png",
             price: "160",
             prevPrice: "170",

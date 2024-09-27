@@ -1,14 +1,12 @@
 <template>
-    <div v-show="visible" @click="scrollToTop" class="fixed z-50 bottom-4 right-14">
-      <button class="flex items-center justify-center w-12 h-12 p-4 text-black bg-gray-200 rounded-full shadow-md">
-        <i class="text-xl pi pi-arrow-up"></i>
+    <div v-show="visible" @click="scrollToTop" class="fixed z-50 bottom-4 right-6">
+      <button class="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 text-gray-100 bg-red-500 rounded-full shadow-md">
+        <icon name="material-symbols:arrow-upward-rounded" class="w-6 h-10" />
       </button>
     </div>
   </template>
   
   <script setup>
-  import { ref, onMounted, onUnmounted } from 'vue';
-  
   const visible = ref(false);
   
   const scrollToTop = () => {

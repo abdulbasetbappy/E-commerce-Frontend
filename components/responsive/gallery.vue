@@ -37,7 +37,7 @@ const products = [
         <TitleWithSub title="Featured" subtitle="New Arrival" />
         <div class="grid grid-cols-1 gap-4 mt-10 md:grid-cols-2 lg:grid-cols-4">
             <div v-for="(product, index) in products" :key="index" :class="product.span"
-                class="relative bg-black rounded-md">
+                class="relative bg-black overflow-hidden rounded-md">
                 <img :src="product.image" :alt="product.name" :class="[
                 'w-full',
                 index === 0 ? 'h-full ' : 'md:h-[300px]',
