@@ -4,9 +4,7 @@ import { ref, computed } from "vue";
 
 const crumbs = [
   { name: "Account", link: "/account" },
-  { name: "My Account", link: "/my_account" },
-  { name: "Product", link: "/product" },
-  { name: "View Cart", link: "/view_cart" },
+  { name: "Cart", link: "/cart" },
   { name: "Checkout" },
 ];
 
@@ -84,7 +82,7 @@ const countries = ref([
 <template>
   <!-- about us banner -->
   <NuxtLayout name="home">
-    <div class="lg:px-36 px-4 mb-20 w-full">
+    <div class="lg:px-36 px-4 mb-20 container mx-auto">
       <div class="text-left py-4">
         <Breadcrumb :crumbs="crumbs" />
       </div>
