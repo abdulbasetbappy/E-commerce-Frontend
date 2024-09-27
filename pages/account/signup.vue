@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="home">
-    <div class="grid w-full grid-cols-12 gap-5 py-10">
+    <div class="grid container mx-auto w-full grid-cols-12 gap-5 py-10 pt-0 md:pt-10">
       <!-- Image -->
       <div class="col-span-12 lg:col-span-7 xl:col-span-6">
         <img

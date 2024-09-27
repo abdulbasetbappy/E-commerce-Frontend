@@ -20,11 +20,11 @@ const handleSubmit = () => {
 <template>
   <div class="w-full p-4 rounded-md lg:pe-36">
     <div class="text-center lg:text-left">
-      <h2 class="mb-4 text-3xl font-bold">Log in to Skyline</h2>
-      <p class="mt-6 text-base font-medium text-black">
+      <h2 class="md:mb-4 text-3xl font-bold">Log in to Skyline</h2>
+      <p class="mt-2 md:mt-6 text-base font-medium text-black">
         Enter your details below
       </p>
-      <form @submit.prevent="handleSubmit" class="pt-6 text-center lg:text-left">
+      <form @submit.prevent="handleSubmit" class="pt-2 md:pt-6 text-center lg:text-left">
         <InputField
           id="email"
           type="email"
