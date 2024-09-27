@@ -11,7 +11,7 @@ const crumbs = [{ name: "Home", link: "/" }, { name: " Contact" }];
       </div>
       <div class="grid md:grid-cols-12 grid-cols-1 gap-6">
         <div class="md:col-span-4 col-span-12">
-          <div class="shadow p-6 rounded">
+          <div class="shadow p-6 rounded bg-gray-100">
             <!-- phone -->
             <div class="flex items-center gap-2">
               <span
@@ -26,7 +26,7 @@ const crumbs = [{ name: "Home", link: "/" }, { name: " Contact" }];
               <p>We are available 24/7, 7 days a week.</p>
               <p>Phone: +8801611112222</p>
             </div>
-            <hr class="h-px my-6 bg-gray-200 border-0 dark:bg-gray-700" />
+            <hr class="h-px my-6 bg-gray-300 border-0 dark:bg-gray-700" />
             <!-- email -->
             <div class="flex items-center gap-2">
               <span

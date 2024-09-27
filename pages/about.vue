@@ -113,14 +113,14 @@ const supports = [
 <template>
   <NuxtLayout name="home">
     <!-- about us banner -->
-    <div class="lg:ps-36 ps-4 md:pe-0 pe-4 w-full">
-      <div class="py-8 text-left">
+    <div class="mx-auto container px-4 md:px-36">
+      <div class="py-1 md:py-4 text-left">
         <Breadcrumb :crumbs="crumbs" />
       </div>
-      <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
         <div>
           <h3 class="text-3xl font-semibold text-dark">Our Story</h3>
-          <p class="pt-8">
+          <p class="pt-4 md:pt-8">
             Launced in 2015, Skyline is South Asia's premier online shopping
             makterplace with an active presense in Bangladesh. Supported by wide
             range of tailored marketing, data and service solutions, Skyline
@@ -134,31 +134,32 @@ const supports = [
           </p>
         </div>
         <div>
-          <img class="w-full" :src="aboutUs" alt="" />
+          <img class="w-[80%] rounded-lg" :src="aboutUs" alt="" />
         </div>
       </div>
     </div>
     <!-- about us counter -->
-    <div class="grid grid-cols-2 gap-4 px-4 pt-12 md:grid-cols-4 lg:px-36 lg:pt-28 md:pt-20">
+    <div class="container mx-auto md:px-36 grid grid-cols-2 gap-4 px-4 pt-12 md:grid-cols-4 lg:px-36 lg:pt-28 md:pt-20">
       <div
-        class="flex flex-col items-center p-8 space-y-2 duration-300 border border-gray-400 rounded hover:text-white hover:border-primary hover:bg-primary group"
+        class="flex flex-col items-center p-6 space-y-2 duration-300 border border-gray-400 rounded hover:text-white hover:border-primary hover:bg-primary group"
         v-for="(item, index) in counterItem" :key="index">
         <div class="p-2 mb-2 bg-black rounded-full ring-4 ring-gray-400 group-hover:ring-red-300 group-hover:bg-white">
           <Icon :name="item.iconName" class="w-8 h-8 text-white group-hover:text-dark" />
         </div>
 
         <h3 class="text-2xl font-bold">{{ item.counter }}K</h3>
-        <h3>{{ item.title }}K</h3>
+        <p class="text-center">{{ item.title }}</p>
       </div>
     </div>
 
     <!-- team slider -->
-    <div class="px-4 pt-12 lg:px-36 lg:pt-28 md:pt-20">
+    <div class="container mx-auto md:px-36 px-4 pt-4 ">
+      <TitleWithSub class="my-6" title="Our Team" subtitle="Meet the people behind Skyline" />
       <swiper :slides-per-view="3" space-between="30" :pagination="{
         clickable: true,
       }" :breakpoints="{
         '300': {
-          slidesPerView: 1,
+          slidesPerView: 2,
           spaceBetween: 20,
         },
         '768': {
@@ -171,21 +172,21 @@ const supports = [
         },
       }" :modules="modules" class="mySwiper">
         <swiper-slide v-for="(member, index) in teamMembers" :key="index">
-          <div class="pt-12 bg-light">
-            <img :src="member.image" alt="" class="mx-auto mb-4 w-52 h-80" />
+          <div class="p-2 pb-0 bg-gray-300 flex items-end justify-center rounded-xl">
+            <img :src="member.image" alt="" class="object-fill h-48" />
           </div>
-          <div class="mt-4 space-y-3">
+          <div class="p-2">
             <h3 class="text-xl font-bold">{{ member.name }}</h3>
-            <p class="text-gray-600">{{ member.position }}</p>
-            <div class="flex gap-3 mt-2">
+            <p class="text-gray-600 text-xs">{{ member.position }}</p>
+            <div class="flex gap-2">
               <span>
-                <Icon name="hugeicons:twitter" class="w-6 h-6" />
+                <Icon name="hugeicons:twitter" class="w-4 h-4 hover:text-red-500" />
               </span>
               <span>
-                <Icon name="hugeicons:instagram" class="w-6 h-6" />
+                <Icon name="hugeicons:instagram" class="w-4 h-4 hover:text-red-500" />
               </span>
               <span>
-                <Icon name="ri:linkedin-line" class="w-6 h-6" />
+                <Icon name="ri:linkedin-line" class="w-4 h-4 hover:text-red-500" />
               </span>
             </div>
           </div>
@@ -193,10 +194,6 @@ const supports = [
       </swiper>
         <Features class="my-10" />
     </div>
-
-
-  
-  
   </NuxtLayout>
 </template>
 
@@ -213,7 +210,7 @@ const supports = [
 
 .swiper-pagination-bullet-active {
   background-color: #db4444;
-  border: 2px solid rgba(128, 128, 128, 0.527);
+  border: 2px solid rgba(241, 123, 123, 0.527);
   width: 12px;
   height: 12px;
 }

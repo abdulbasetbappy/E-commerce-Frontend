@@ -39,9 +39,9 @@ const menus = [
 <template>
   <div>
     <!-- Top header -->
-    <div class="hidden px-4 py-1 text-white bg-black md:flex lg:px-6">
-      <div class="md:w-10/12 flex items-center justify-between mx-auto">
-        <div class="flex-1 text-center">
+    <div class="hidden text-white bg-black md:block">
+      <div class="flex items-center container justify-around px-4 py-1 mx-auto">
+        <div class="">
           <span class="text-sm">
             Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
           </span>
@@ -65,7 +65,7 @@ const menus = [
         <!-- Logo -->
         <div class="flex items-center">
           <NuxtLink to="/">
-            <span class="text-xl font-bold">Skipline</span>
+            <span class="text-xl font-bold">Skyline</span>
           </NuxtLink>
         </div>
         <!-- Navigation Links for larger screens -->
@@ -162,27 +162,63 @@ const menus = [
           </Sidebar>
         </div>
       </div>
-      <!-- Sidebar menu for mobile and tablet 
+      <!-- Sidebar menu for mobile and tablet -->
       <div :class="[
-        'inset-y-0 left-0 fixed inset-0 z-40 bg-black opacity-50 flex transition-transform duration-300',
-        isMenuOpen ? 'translate-x-0' : '-translate-x-full '
+        'inset-y-0 left-0 fixed inset-0 z-40 bg-black flex transition duration-300',
+        isMenuOpen ? 'opacity-50' : 'opacity-0 pointer-events-none'
       ]" @click="toggleMenu"></div>
+
+      <!-- Sidebar content -->
       <div :class="[
         'fixed inset-y-0 left-0 z-50 flex transition-transform duration-300',
         isMenuOpen ? 'translate-x-0' : '-translate-x-full'
       ]">
-        <div class="flex flex-col h-full p-6 space-y-4 overflow-y-auto bg-white shadow-md opacity-95 w-80">
+        <div class="flex flex-col h-full p-6 space-y-3 overflow-y-auto bg-white shadow-md opacity-95 w-80">
 
-          <div class="flex items-center justify-between mb-6 text-gray-600 hover:text-black focus:outline-none">
+          <!-- Header with close button -->
+          <div class="flex items-center justify-between text-gray-600">
             <NuxtLink class="text-xl font-bold" to="/">
               Skyline
             </NuxtLink>
             <Icon name="material-symbols:close" @click="toggleMenu" class="w-6 h-6" />
           </div>
 
-          <h2 class="text-2xl font-bold">All Categories</h2>
-          <Category />
-          Social Icons
+          <!--Navigation Menu-->
+          <nav class="flex flex-row items-center justify-center rounded-md gap-3 py-2 bg-gray-900">
+            <NuxtLink v-for="menu in menus" :key="menu.text" :href="menu.link"
+              class="font-bold text-gray-100 text-md hover:underline hover:underline-offset-4" >{{ menu.text }}</NuxtLink>
+          </nav>
+
+          <!-- Categories -->
+          <div>
+            <h2 class="text-2xl font-bold mb-4">All Categories</h2>
+            <Category />
+          </div>
+
+          <!-- User Actions (Wishlist, Profile, Cart, Sign In) -->
+          <div class="space-y-2">
+            <NuxtLink to="/wishlist" class="flex items-center text-lg text-gray-600 hover:text-black">
+              <Icon name="ph:heart" class="w-5 h-5 mr-2" />
+              Wishlist
+            </NuxtLink>
+
+            <NuxtLink to="/account" class="flex items-center text-lg text-gray-600 hover:text-black">
+              <Icon name="mdi:account" class="w-5 h-5 mr-2" />
+              Profile
+            </NuxtLink>
+
+            <NuxtLink to="/cart" class="flex items-center text-lg text-gray-600 hover:text-black">
+              <Icon name="ph:shopping-cart" class="w-5 h-5 mr-2" />
+              Cart
+            </NuxtLink>
+
+            <NuxtLink to="/sign-in" class="flex items-center text-lg text-gray-600 hover:text-black">
+              <Icon name="mdi:login" class="w-5 h-5 mr-2" />
+              Sign In
+            </NuxtLink>
+          </div>
+
+          <!-- Social Icons -->
           <div class="flex mt-8 space-x-4">
             <a href="#" class="hover:underline">
               <Icon name="brandico:facebook" class="w-5 h-5" />
@@ -197,94 +233,9 @@ const menus = [
               <Icon name="ri:linkedin-line" class="w-5 h-5" />
             </a>
           </div>
+
         </div>
-      </div>-->
-      <!-- Sidebar menu for mobile and tablet -->
-<!-- Background overlay with smooth opacity transition -->
-<div 
-  :class="[
-    'inset-y-0 left-0 fixed inset-0 z-40 bg-black flex transition duration-300',
-    isMenuOpen ? 'opacity-50' : 'opacity-0 pointer-events-none'
-  ]"
-  @click="toggleMenu"
-></div>
-
-<!-- Sidebar content -->
-<div 
-  :class="[
-    'fixed inset-y-0 left-0 z-50 flex transition-transform duration-300',
-    isMenuOpen ? 'translate-x-0' : '-translate-x-full'
-  ]"
->
-  <div class="flex flex-col h-full p-6 space-y-6 overflow-y-auto bg-white shadow-md opacity-95 w-80">
-    
-    <!-- Header with close button -->
-    <div class="flex items-center justify-between text-gray-600">
-      <NuxtLink class="text-xl font-bold" to="/">
-        Skyline
-      </NuxtLink>
-      <Icon name="material-symbols:close" @click="toggleMenu" class="w-6 h-6" />
-    </div>
-    
-    <!-- Categories -->
-    <div>
-      <h2 class="text-2xl font-bold mb-4">All Categories</h2>
-      <Category />
-    </div>
-
-    <!-- User Actions (Wishlist, Profile, Cart, Sign In) -->
-    <div class="space-y-4">
-      <NuxtLink 
-        to="/wishlist" 
-        class="flex items-center text-lg text-gray-600 hover:text-black"
-      >
-        <Icon name="ph:heart" class="w-5 h-5 mr-2" />
-        Wishlist
-      </NuxtLink>
-
-      <NuxtLink 
-        to="/account" 
-        class="flex items-center text-lg text-gray-600 hover:text-black"
-      >
-        <Icon name="mdi:account" class="w-5 h-5 mr-2" />
-        Profile
-      </NuxtLink>
-
-      <NuxtLink 
-        to="/cart" 
-        class="flex items-center text-lg text-gray-600 hover:text-black"
-      >
-        <Icon name="ph:shopping-cart" class="w-5 h-5 mr-2" />
-        Cart
-      </NuxtLink>
-
-      <NuxtLink 
-        to="/sign-in" 
-        class="flex items-center text-lg text-gray-600 hover:text-black"
-      >
-        <Icon name="mdi:login" class="w-5 h-5 mr-2" />
-        Sign In
-      </NuxtLink>
-    </div>
-
-    <!-- Social Icons -->
-    <div class="flex mt-8 space-x-4">
-      <a href="#" class="hover:underline">
-        <Icon name="brandico:facebook" class="w-5 h-5" />
-      </a>
-      <a href="#" class="hover:underline">
-        <Icon name="ph:twitter-logo" class="w-5 h-5" />
-      </a>
-      <a href="#" class="hover:underline">
-        <Icon name="ph:instagram-logo" class="w-5 h-5" />
-      </a>
-      <a href="#" class="hover:underline">
-        <Icon name="ri:linkedin-line" class="w-5 h-5" />
-      </a>
-    </div>
-    
-  </div>
-</div>
+      </div>
 
     </header>
   </div>
