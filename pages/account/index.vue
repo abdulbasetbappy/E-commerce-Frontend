@@ -1,28 +1,37 @@
 <script setup>
-import { ref } from "vue";
 const crumbs = [{ name: "Home", link: "/" }, { name: " Acocunt" }];
 
-const invoices = ref([
-  // Example data
-  {
-    name: "John Doe",
-    invoiceNumber: "12345",
-    qty: 10,
-    total: "$100",
-    date: "2024-06-14",
-    status: "Paid",
-    action: "View",
-  },
-  {
-    name: "Jane Smith",
-    invoiceNumber: "67890",
-    qty: 5,
-    total: "$50",
-    date: "2024-06-15",
-    status: "Pending",
-    action: "View",
-  },
+const fName = "Jhon"; 
+const lName = "Doe"; 
+const email = "ahmedmusta@gmail.com"; 
+const address = "Rajshahi Bangladesh"; 
+
+const selectedThana = ref();
+const thanas = ref([
+  { name: "Gulshan", code: "NY" },
+  { name: "Airport", code: "RM" },
+  { name: "Dhanmondi", code: "LDN" },
+  { name: "Mirpur", code: "IST" },
+  { name: "Uttora", code: "PRS" },
 ]);
+
+const selectedCity = ref();
+const cities = ref([
+  { name: "Rajshahi", code: "NY" },
+  { name: "Dhaka", code: "RM" },
+  { name: "Khulna", code: "LDN" },
+  { name: "Rangpur", code: "IST" },
+  { name: "Chittagong", code: "PRS" },
+]);
+const selectedCountry = ref();
+const countries = ref([
+  { name: "Bangladesh", code: "NY" },
+  { name: "India", code: "RM" },
+  { name: "Pakisthan", code: "LDN" },
+  { name: "UK", code: "IST" },
+  { name: "USA", code: "PRS" },
+]);
+
 </script>
 
 <template>
@@ -32,94 +41,91 @@ const invoices = ref([
       <div class="flex justify-between items-center py-4">
         <Breadcrumb :crumbs="crumbs" />
         <div>
-          <p>Welcome! <span class="text-primary">Mustak Ahmed</span></p>
+          <p>Welcome! <span class="text-primary">John Doe</span></p>
         </div>
       </div>
       <div class="grid md:grid-cols-12 grid-cols-1 gap-6">
-        <div class="md:col-span-4 col-span-12">
+        <div class="md:col-span-3 col-span-13">
           <!-- profile sider bar -->
-             <AccountMenu/>
+         <AccountMenu/>
         </div>
-        <div class="md:col-span-8 col-span-12">
-           <div class="relative overflow-x-auto">
-             <table class="min-w-full divide-y divide-gray-200">
-              <thead class="bg-[#7D8184]">
-                <tr>
-                  <th
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-100 uppercase tracking-wider"
-                  >
-                    SL
-                  </th>
-                  <th
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-100 uppercase tracking-wider"
-                  >
-                    Name
-                  </th>
-                  <th
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-100 uppercase tracking-wider"
-                  >
-                    Invoice#
-                  </th>
-                  <th
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-100 uppercase tracking-wider"
-                  >
-                    Qty
-                  </th>
-                  <th
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-100 uppercase tracking-wider"
-                  >
-                    Total
-                  </th>
-                  <th
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-100 uppercase tracking-wider"
-                  >
-                    Date
-                  </th>
-                  <th
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-100 uppercase tracking-wider"
-                  >
-                    Status
-                  </th>
-                  <th
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-100 uppercase tracking-wider"
-                  >
-                    Action
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="bg-white divide-y divide-gray-200">
-                <tr class="odd:bg-white even:bg-gray-50 border-0" v-for="(invoice, index) in invoices" :key="index">
-                  <td
-                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
-                  >
-                    {{ index + 1 }}
-                  </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {{ invoice.name }}
-                  </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {{ invoice.invoiceNumber }}
-                  </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {{ invoice.qty }}
-                  </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {{ invoice.total }}
-                  </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {{ invoice.date }}
-                  </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {{ invoice.status }}
-                  </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {{ invoice.action }}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <pagination/>
-           </div>
+        <div class="md:col-span-9 col-span-13">
+          <div class="shadow p-6 rounded">
+            <h2 class="text-lg border-l-4 pl-4 border-red-500 text-primary font-semibold mb-4">
+              Edit Your Profile
+            </h2>
+            <div class="grid md:grid-cols-12 grid-cols-1 gap-x-6">
+              <div class="md:col-span-6 col-span-12">
+                <InputContactInputField
+                  type="text"
+                  label="First Name"
+                  v-model="fName"
+                  value="Md"
+                />
+              </div>
+              <div class="md:col-span-6 col-span-12">
+                <InputContactInputField
+                  type="text"
+                  label="Last Name"
+                  v-model="lName"
+                />
+              </div>
+              <div class="md:col-span-6 col-span-12">
+                <InputContactInputField type="email" label="Email" v-model="email" />
+              </div>
+              <div class="md:col-span-6 col-span-12">
+                <InputContactInputField
+                  type="text"
+                  label="Address"
+                  v-model="address"
+                />
+              </div>
+            </div>
+
+               <!-- select Thana -->
+
+          <div class="rounded account bg-light  flex justify-center w-full mb-5">
+            <Dropdown v-model="selectedThana" filter :options="thanas" optionLabel="name" placeholder="Select a Thana"
+              class="w-full bg-light text-lg" />
+          </div>
+          <!-- select city -->
+
+          <div class="rounded account bg-light flex justify-center w-full mb-5">
+            <Dropdown v-model="selectedCity" filter :options="cities" optionLabel="name" placeholder="Select a City"
+              class="w-full bg-light" />
+          </div>
+          <!-- select conuntry -->
+           
+          <div class="rounded account bg-light flex justify-center w-full mb-5">
+            <Dropdown v-model="selectedCountry" filter :options="countries" optionLabel="name"
+              placeholder="Select a Country" class="w-full bg-light" />
+          </div>
+            
+            <InputContactInputField
+              type="password"
+              label="Password Changes"
+              v-model="password"
+              placeholder="Current Password"
+            />
+            <InputContactInputField
+              type="password"
+              v-model="password"
+              placeholder="New Password"
+            />
+            <InputContactInputField
+              type="password"
+              v-model="password"
+              placeholder="Confirm Password"
+            />
+            <div class="text-end md:mt-4 space-x-2">
+              <button
+                type="button"
+                class="focus:outline-none text-white bg-primary hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded text-sm px-5 py-2.5 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+              >
+                Update Profile
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -127,8 +133,9 @@ const invoices = ref([
 </template>
 
 
-<style scoped>
-tr, td{
-  border: 0;
+<style>
+.account .p-inputtext{
+  font-size: 15px !important;
+  color:#343a40;
 }
 </style>

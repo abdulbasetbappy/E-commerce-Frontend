@@ -32,94 +32,72 @@ const invoices = ref([
       <div class="flex justify-between items-center py-4">
         <Breadcrumb :crumbs="crumbs" />
         <div>
-          <p>Welcome! <span class="text-primary">Mustak Ahmed</span></p>
+          <p>Welcome! <span class="text-primary">{{ invoices[0].name }}</span></p>
         </div>
       </div>
       <div class="grid md:grid-cols-12 grid-cols-1 gap-6">
-        <div class="md:col-span-4 col-span-12">
+        <div class="md:col-span-3 col-span-13">
           <!-- profile sider bar -->
-             <AccountMenu/>
+          <AccountMenu />
         </div>
-        <div class="md:col-span-8 col-span-12">
-           <div class="relative overflow-x-auto">
-             <table class="min-w-full divide-y divide-gray-200">
+        <div class="md:col-span-9 col-span-13">
+          <h2 class="text-lg border-l-4 pl-4 border-red-500 text-primary font-semibold mb-4">
+            All Returns
+          </h2>
+          <div class="relative overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
               <thead class="bg-[#7D8184]">
                 <tr>
                   <th
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-100 uppercase tracking-wider"
-                  >
-                    SL
-                  </th>
+                    class="px-2 py-1 md:px-4 md:py-2 text-left text-[10px] md:text-xs font-medium text-gray-100 uppercase tracking-wider">
+                    SL</th>
                   <th
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-100 uppercase tracking-wider"
-                  >
-                    Name
-                  </th>
+                    class="px-2 py-1 md:px-4 md:py-2 text-left text-[10px] md:text-xs font-medium text-gray-100 uppercase tracking-wider">
+                    Name</th>
                   <th
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-100 uppercase tracking-wider"
-                  >
-                    Invoice#
-                  </th>
+                    class="px-2 py-1 md:px-4 md:py-2 text-left text-[10px] md:text-xs font-medium text-gray-100 uppercase tracking-wider">
+                    Invoice#</th>
                   <th
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-100 uppercase tracking-wider"
-                  >
-                    Qty
-                  </th>
+                    class="px-2 py-1 md:px-4 md:py-2 text-left text-[10px] md:text-xs font-medium text-gray-100 uppercase tracking-wider">
+                    Qty</th>
                   <th
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-100 uppercase tracking-wider"
-                  >
-                    Total
-                  </th>
+                    class="px-2 py-1 md:px-4 md:py-2 text-left text-[10px] md:text-xs font-medium text-gray-100 uppercase tracking-wider">
+                    Total</th>
                   <th
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-100 uppercase tracking-wider"
-                  >
-                    Date
-                  </th>
+                    class="px-2 py-1 md:px-4 md:py-2 text-left text-[10px] md:text-xs font-medium text-gray-100 uppercase tracking-wider">
+                    Date</th>
                   <th
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-100 uppercase tracking-wider"
-                  >
-                    Status
-                  </th>
+                    class="px-2 py-1 md:px-4 md:py-2 text-left text-[10px] md:text-xs font-medium text-gray-100 uppercase tracking-wider">
+                    Status</th>
                   <th
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-100 uppercase tracking-wider"
-                  >
-                    Action
-                  </th>
+                    class="px-2 py-1 md:px-4 md:py-2 text-left text-[10px] md:text-xs font-medium text-gray-100 uppercase tracking-wider">
+                    Action</th>
                 </tr>
               </thead>
               <tbody class="bg-white divide-y divide-gray-200">
-                <tr class="odd:bg-white even:bg-gray-50 border-0" v-for="(invoice, index) in invoices" :key="index">
+                <tr v-for="(invoice, index) in invoices" :key="index" class="odd:bg-white even:bg-gray-50">
                   <td
-                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
-                  >
-                    {{ index + 1 }}
-                  </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {{ invoice.name }}
-                  </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {{ invoice.invoiceNumber }}
-                  </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {{ invoice.qty }}
-                  </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {{ invoice.total }}
-                  </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {{ invoice.date }}
-                  </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {{ invoice.status }}
-                  </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {{ invoice.action }}
-                  </td>
+                    class="px-2 py-1 md:px-4 md:py-2 whitespace-nowrap text-[10px] md:text-sm font-medium text-gray-900">
+                    {{ index + 1 }}</td>
+                  <td class="px-2 py-1 md:px-4 md:py-2 whitespace-nowrap text-[10px] md:text-sm text-gray-500">{{
+                    invoice.name }}</td>
+                  <td class="px-2 py-1 md:px-4 md:py-2 whitespace-nowrap text-[10px] md:text-sm text-gray-500">#{{
+                    invoice.invoiceNumber }}</td>
+                  <td class="px-2 py-1 md:px-4 md:py-2 whitespace-nowrap text-[10px] md:text-sm text-gray-500">{{
+                    invoice.qty }}</td>
+                  <td class="px-2 py-1 md:px-4 md:py-2 whitespace-nowrap text-[10px] md:text-sm text-gray-500">{{
+                    invoice.total }}</td>
+                  <td class="px-2 py-1 md:px-4 md:py-2 whitespace-nowrap text-[10px] md:text-sm text-gray-500">{{
+                    invoice.date }}</td>
+                  <td class="px-2 py-1 md:px-4 md:py-2 whitespace-nowrap text-[10px] md:text-sm text-gray-500">{{
+                    invoice.status }}</td>
+                  <td class="px-2 py-1 md:px-4 md:py-2 whitespace-nowrap text-[10px] md:text-sm text-gray-500">{{
+                    invoice.action }}</td>
                 </tr>
               </tbody>
             </table>
-            <pagination/>
-           </div>
+          </div>
+          <pagination />
         </div>
       </div>
     </div>
@@ -128,7 +106,8 @@ const invoices = ref([
 
 
 <style scoped>
-tr, td{
+tr,
+td {
   border: 0;
 }
 </style>

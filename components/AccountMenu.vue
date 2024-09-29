@@ -4,12 +4,12 @@ import { Title } from "~/node_modules/nuxt/dist/head/runtime/components";
 const manageAccount = [
   {
     menu: "My Profile",
-    link: "/account/account",
+    link: "/account/",
   },
 
   {
     menu: "All Orders",
-    link: "/account/",
+    link: "/account/order/",
   },
   {
     menu: "My Returns",

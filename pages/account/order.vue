@@ -5,7 +5,7 @@ const crumbs = [{ name: "Home", link: "/" }, { name: " Acocunt" }];
 const invoices = ref([
   // Example data
   {
-    name: "Alif Layla",
+    name: "Alexa Bliss",
     invoiceNumber: "12345",
     qty: 10,
     total: "$100",
@@ -14,7 +14,7 @@ const invoices = ref([
     action: "View",
   },
   {
-    name: "Smith Anderson",
+    name: "Nathan Drake",
     invoiceNumber: "67890",
     qty: 5,
     total: "$50",
@@ -32,17 +32,17 @@ const invoices = ref([
       <div class="flex justify-between items-center py-4">
         <Breadcrumb :crumbs="crumbs" />
         <div>
-          <p>Welcome! <span class="text-primary"> {{ invoices[0].name }}</span></p>
+          <p>Welcome! <span class="text-primary">John Doe</span></p>
         </div>
       </div>
       <div class="grid md:grid-cols-12 grid-cols-1 gap-6">
-        <div class="md:col-span-3 col-span-12">
+        <div class="md:col-span-3 col-span-13">
           <!-- profile sider bar -->
              <AccountMenu/>
         </div>
-        <div class="md:col-span-9 col-span-12">
+        <div class="md:col-span-9 col-span-13">
           <h2 class="text-lg border-l-4 pl-4 border-red-500 text-primary font-semibold mb-4">
-              All Canceled Orders
+              All Orders
             </h2>
            <div class="relative overflow-x-auto">
             <table class="min-w-full divide-y divide-gray-200">
@@ -97,7 +97,7 @@ const invoices = ref([
               </tbody>
             </table>
            </div>
-           <pagination/>
+            <pagination/>
         </div>
       </div>
     </div>
