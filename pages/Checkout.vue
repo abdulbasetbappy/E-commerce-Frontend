@@ -3,8 +3,7 @@ import Dropdown from "primevue/dropdown";
 import { ref, computed } from "vue";
 
 const crumbs = [
-  { name: "Account", link: "/account" },
-  { name: "Cart", link: "/cart" },
+  { name: "Cart", link: "cart" },
   { name: "Checkout" },
 ];
 
@@ -88,13 +87,12 @@ const countries = ref([
       </div>
 
       <!-- delivery info -->
-      <div class="grid md:grid-cols-12 grid-cols-1 gap-16">
-        <div class="md:col-span-6 col-span-12">
-          <InputContactInputField type="text" label="Your Name" id="name" v-model="name" class="mb-4" />
 
+      <div class="grid md:grid-cols-12 grid-cols-1 gap-10 md:gap-16">
+        <div class="md:col-span-6 col-span-13">
+          <InputContactInputField type="text" label="Your Name" id="name" v-model="name" class="mb-4" />
           <InputContactInputField type="email" label="Your Email" id="email" v-model="email" class="mb-4" />
           <InputContactInputField type="number" label="Phone Number*" id="phone-number" v-model="phoneNumber" class="mb-4" />
-
           <InputContactInputField type="text" label="Street Address *" id="street-address" v-model="streetAddress"
             class="mb-4" />
           <InputContactInputField type="text" label="Apartment, floor, etc. (optional)" id="apartment" v-model="apartment"
@@ -108,7 +106,7 @@ const countries = ref([
           </div>
           <!-- select city -->
 
-          <div class="rounded bg-light flex justify-center w-full mb-5">
+          <div class="rounded bg-light flex justify-center w-full mb-5  ">
             <Dropdown v-model="selectedCity" filter :options="cities" optionLabel="name" placeholder="Select a City"
               class="w-full bg-light" />
           </div>
@@ -127,8 +125,8 @@ const countries = ref([
         </div>
 
         <!-- payment info -->
-        <div class="md:col-span-6 col-span-12">
-          <div class="p-6 space-y-4">
+        <div class="md:col-span-6 col-span-13">
+          <div class="space-y-4">
             <div v-for="item in items" :key="item.id" class="flex items-center justify-between space-x-4">
               <div class="flex items-center gap-4">
                 <img :src="item.image" :alt="item.name" class="w-16 h-16" />
@@ -191,8 +189,7 @@ const countries = ref([
     </div>
   </NuxtLayout>
 </template>
-
-<style>
+<style scoped>
 .p-dropdown-filter {
   padding: 7px !important;
 }
@@ -205,9 +202,7 @@ const countries = ref([
 .p-dropdown:not(.p-disabled).p-focus {
   outline: 0 !important;
 }
-</style>
 
-<style scoped>
 .form-radio {
   appearance: none;
   -webkit-appearance: none;

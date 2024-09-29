@@ -1,13 +1,13 @@
 <template>
-  <footer class="px-6 md:px-4 py-10 pb-4 mt-10 text-white bg-gray-950">
+  <footer class="px-6 md:px-10 py-10 pb-4 mt-10 text-white bg-gray-950">
     <div
-      class="mx-auto container gap-8 mx-auto space-y-8 md:grid md:grid-cols-3 lg:grid-cols-5 md:space-y-0"
+      class="container gap-8 mx-auto space-y-8 md:grid md:grid-cols-3 lg:grid-cols-5 md:space-y-0"
     >
       <!-- Skyline Section -->
       <div class="space-y-4">
         <h2 class="text-3xl font-semibold">Skyline</h2>
-        <p class="mt-4 text-lg text-red-500">Subscribe</p>
-        <p class="text-base">Get 10% off your first order</p>
+        <p class="mt-4 text-lg font-bold text-red-500">Subscribe</p>
+        <p class="text-base">Get 10% off your first order Now Lorem ipsum dolor.</p>
         <form @submit.prevent="handleSubmit" class="relative flex mt-4">
           <div class="relative">
             <input
