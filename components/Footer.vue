@@ -81,7 +81,7 @@
           </div>
           <div class="col-span-1">
             <img
-              src="~/public/images/install.png"
+              src="/images/install.png"
               alt="Download on Google Play"
               class="w-auto h-20 py-1 lg:h-auto lg:w-full md:object-fill"
             />
