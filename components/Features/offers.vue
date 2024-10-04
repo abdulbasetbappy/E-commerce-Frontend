@@ -116,7 +116,7 @@ const next = () => {
             </swiper>
         </div>
         <div class="flex items-center justify-center py-8 md:py-14">
-            <NuxtLink to="/productPage/{id}">
+            <NuxtLink to="/products">
                 <Button class="w-40 text-center"> View All products </Button>
             </NuxtLink>
 

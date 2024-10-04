@@ -31,13 +31,14 @@ const toggleDesktopDropdown = (value) => {
 
 const menus = [
   { text: "Home", link: "/" },
+  { text: "Products", link: "/products" },
   { text: "Contact", link: "/contact" },
   { text: "About", link: "/about" },
-  { text: "Sign Up", link: "/account/signup" },
 ];
 </script>
 <template>
   <div>
+
     <!-- Top header -->
     <div class="hidden text-white bg-black md:block">
       <div class="flex items-center container justify-around px-4 py-1 mx-auto">
@@ -141,11 +142,11 @@ const menus = [
               <Icon name="mdi:account" class="w-6 h-6" />
             </button>
             <div ref="desktopDropdown" v-if="isDesktopDropdownOpen"
-              class="desktop-dropdown absolute -right-40 top-[18px] z-50 mt-2 w-48 bg-white shadow-lg"
+              class="desktop-dropdown absolute -left-40 top-[18px] z-50 rounded-lg mt-2 w-48 bg-white shadow-lg"
               @mouseenter="toggleDesktopDropdown(true)" @mouseleave="toggleDesktopDropdown(false)">
-              <NuxtLink to="/account/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Account</NuxtLink>
-              <NuxtLink to="/account/login" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Log In</NuxtLink>
-              <NuxtLink to="/account/signup" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Sign Up</NuxtLink>
+              <NuxtLink to="/account/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">My Account</NuxtLink>
+              <NuxtLink to="/login" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Log In</NuxtLink>
+              <NuxtLink to="/signup" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Sign Up</NuxtLink>
             </div>
           </div>
           <!-- cart icon -->

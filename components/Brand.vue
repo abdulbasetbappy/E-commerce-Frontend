@@ -29,7 +29,7 @@ const brands = ref([
     <div class="py-10 mt-10">
        <TitleWithSub
           title="Our Partner"
-          class="pb-10"
+          class="pb-4"
         />
       <swiper
         :slides-per-view="3"

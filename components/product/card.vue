@@ -25,7 +25,7 @@ const addToWishlist = () => {
 <template>
   <div class="relative">
     <div
-      class="relative flex items-center justify-center rounded-t-md p-4 md:p-6 bg-gray-100 cursor-pointer group"
+      class="relative flex items-center justify-center rounded-t-md p-2 md:p-4 bg-gray-100 cursor-pointer group"
     >
       <div
         v-if="product.discount"
@@ -34,7 +34,7 @@ const addToWishlist = () => {
         {{ product.discount }}
       </div>
       <div>
-        <NuxtLink :to="`/product/${product.id}`">
+        <NuxtLink :to="`/products/${product.id}`">
           <img
             :src="product.image"
             alt="Product Image"
@@ -66,16 +66,16 @@ const addToWishlist = () => {
         </button>
       </div>
     </div>
-    <NuxtLink :to="`/product/${product.id}`">
+    <NuxtLink :to="`/products/${product.id}`">
       <div class="p-2 rounded-b-md  bg-gray-50 text-left">
-        <h3 class="text-lg font-semibold">{{ product.name }}</h3>
+        <h3 class="text-sm md:text-base font-semibold">{{ product.name }}</h3>
         <div class="flex items-end gap-2">
-          <div class="text-primary font-semibold text-lg"> ${{ product.price }}</div>
+          <div class="text-primary font-semibold text-sm md:text-base"> ${{ product.price }}</div>
           <div class="line-through text-secondary text-xs md:text-sm">${{ product.prevPrice }}</div>
         </div>
         <div class="flex items-center">
           <Rating :rating="product.rating" />
-          <span class="ml-2 text-sm text-gray-500"
+          <span class="ml-1 text-xs md:text-sm text-gray-500"
             >({{ product.ratingCount }})</span
           >
         </div>

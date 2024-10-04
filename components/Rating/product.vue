@@ -1,5 +1,11 @@
 <script setup>
 
+const brandData = {
+  name: "Samsung",
+  description: "Best Brand in the Market",
+  image: "https://images.samsung.com/is/image/samsung/assets/global/about-us/brand/logo/256_144_4.png?$512_N_PNG$",
+  brandRate: 4,
+};
 const rating = 5;
 const totalRatings = 250;
 const ratings = ref([144, 48, 21, 12, 25]);
@@ -7,34 +13,23 @@ const ratings = ref([144, 48, 21, 12, 25]);
 
 <template>
   <div>
-    <div class="mt-16 ps-6 py-2 bg-[#EFEDED]">
-      <p>Ratings & Reviews</p>
+    <div class="mt-6 rounded-sm ps-6 py-2 bg-[#EFEDED]">
+      <p class="font-bold">Ratings & Reviews</p>
     </div>
     <div class="grid grid-cols-12 mt-4 gap-6">
       <div class="col-span-12 md:col-span-3 md:border-e ps-6">
         <div class="flex items-center">
           <div class="text-4xl font-bold">4.1</div>
           <div
-            class="flex py-1 px-3 text-sm text-white items-center gap-1 bg-[#FF8A00] mt-2"
+            class="flex py-1 px-2 text-sm text-white items-center justify-around gap-1 rounded-md bg-green-500"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="#fff"
-              class="bi bi-star-fill d-inline"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-              />
-            </svg>
-            <p class="font-semibold text-base text-dark">Very Good</p>
+            <Icon name="mingcute:certificate-fill" class="w-5 h-5" />
+            <p class="font-semibold text-base text-gray-100">Very Good</p>
           </div>
-        </div>
+        </div>  
         <div>
           <Rating class="mt-2" :rating="rating" :height="28" width="28" />
-          <p class="mt-2">{{ totalRatings }} Ratings</p>
+          <p class="mt-2 font-bold">{{ totalRatings }} Ratings</p>
         </div>
       </div>
       <div class="col-span-12 md:col-span-6 lg:col-span-4 mt-3 md:mt-0">
@@ -55,6 +50,19 @@ const ratings = ref([144, 48, 21, 12, 25]);
           <div class="w-12 text-right">{{ count }}</div>
         </div>
       </div>
+      <!--Brand Data-->
+      <div class="col-span-12 md:col-span-3 lg:col-span-4">
+        <div class="flex flex-col justify-center items-center border-l">
+          <div class="w-16 h-16 bg-gray-300 flex items-center justify-center rounded-full">
+            <img :src="brandData.image" alt="Brand Image" class="w-full h-full object-cover rounded-full" />
+          </div>
+          <div class=" flex flex-col items-center justify-center">
+            <p class="font-bold text-center">{{ brandData.name }}</p>
+            <p class="text-sm text-gray-500 text-center">{{ brandData.description }}</p>
+            <Rating :rating="brandData.brandRate" class="" />
+          </div>
+        </div>
+      </div>  
     </div>
   </div>
 </template>

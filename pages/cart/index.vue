@@ -120,7 +120,7 @@ const totalCost = computed(() => {
               <span>Total cost</span>
               <span>${{ (totalCost + 10).toFixed(2) }}</span> <!-- Including shipping -->
             </div>
-            <NuxtLink to="/checkout">
+            <NuxtLink to="/cart/checkout">
               <button class="bg-red-500 font-semibold hover:bg-red-600 rounded-md py-3 text-sm text-white uppercase w-full">
               Checkout
             </button>

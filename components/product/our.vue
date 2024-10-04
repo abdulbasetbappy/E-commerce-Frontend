@@ -59,7 +59,7 @@ const next = () => {
 };
 </script>
 <template>
-    <div class="container relative mt-20">
+    <div class="container relative mt-20 ">
         <div class="flex items-center justify-between mb-4">
             <TitleWithSub title="For You" subtitle="Explore Our Products" />
             <div class="absolute top-0 right-0 flex items-center justify-center space-x-2">
@@ -74,17 +74,17 @@ const next = () => {
             </div>
         </div>
         <div class="relative">
-            <swiper ref="swiperInstance" :slides-per-view="4" :space-between="20" :autoplay="{ delay: 4000 }"
+            <swiper ref="swiperInstance" :slides-per-view="4" :space-between="20" :autoplay="{ delay: 5000 }"
                 :loop="true" :grid="{ rows: 2, fill: 'row' }" :breakpoints="responsiveOptions" :navigation="{
                         prevEl: prevEl,
                         nextEl: nextEl,
                     }" :modules="[Navigation, Pagination, Autoplay, Grid]" class="mySwiper">
                 <swiper-slide v-for="(item, index) in items" :key="index">
-                    <ProductCard class="mt-8 md:mt-14" :product="item" />
+                    <ProductCard class="mt-2 md:mt-2" :product="item" />
                 </swiper-slide>
             </swiper>
         </div>
-        <div class="flex items-center justify-center py-8 md:py-14">
+        <div class="flex items-center justify-center py-4 md:py-8">
             <NuxtLink to="/productPage/{id}">
                 <Button class="w-40 text-center">View All Products</Button>
             </NuxtLink>

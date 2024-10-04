@@ -1,5 +1,4 @@
 <script setup>
-import { ref, computed } from "vue";
 import { useCartsStore } from "@/stores/carts";
 
 const carts = useCartsStore();
@@ -43,13 +42,13 @@ console.log(carts.items);
 
 <template>
   <div>
-    <div class="flex items-center justify-between px-4 py-2 bg-red-200">
-      <span class="text-sm">Shop 400 more and save 10 fee</span>
-      <span class="text-primary">{{ totalItems }}</span>
+    <div class="flex rounded-t-sm items-center justify-between px-4 py-1 text-white bg-gray-900">
+      <span class="text-sm font-semibold">Shop $400 More and Enjoy</span>
+      <span class="text-white font-bold">{{ totalItems }}</span>
     </div>
-    <div class="px-4 py-2 express-delivery bg-light">
-      <p class="font-bold">
-        <Icon name="iconoir:delivery-truck" class="w-6 h-6" /> Express Delivery
+    <div class="px-4 rounded-b-sm express-delivery text-green-800 bg-green-300">
+      <p class="font-bold ">
+        <Icon name="iconoir:delivery-truck" class="w-6 h-6" /> Free Express Delivery
       </p>
     </div>
     <div class="p-4 cart-items">
@@ -124,15 +123,28 @@ console.log(carts.items);
         </button>
       </div>
     </div>
-    <div class="flex absolute bottom-0 bg-white items-center justify-center w-full p-4 order-summary">
+    <div class="flex absolute bottom-0 items-center justify-center w-full px-4 order-summary">
       <NuxtLink
         to="/cart"
-        class="w-3/4 py-2 text-white bg-yellow-400 ps-4 pe-8"
+        class="w-full rounded-l-md py-2 text-white bg-red-500 mb-4 ps-4 pe-8"
       >
         Order Place
       </NuxtLink>
 
-      <span class="px-4 py-2 font-bold text-white bg-yellow-600">{{ totalPrice }}</span>
+      <span class="px-4 py-2 font-bold mb-4 rounded-r-md text-white bg-red-700">${{ totalPrice }}</span>
     </div>
   </div>
 </template>
+<style scoped>
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+</style>

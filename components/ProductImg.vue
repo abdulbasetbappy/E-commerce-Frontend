@@ -7,37 +7,29 @@ import "swiper/swiper-bundle.css";
 import { Swiper, SwiperSlide } from "swiper/vue";
 
 // current image
-const setImage = ref("../images/Group1000005941.png");
+const setImage = ref("../singleproduct/mobile01.png");
 
 // Define array of images
 const images = [
   {
-    thumb: "../images/Group1000005941.png",
-    full: "../images/Group1000005941.png",
+    thumb: "../singleproduct/mobile01.png",
+    full: "../singleproduct/mobile01.png",
   },
   {
-    thumb: "../images/Group1000005942.png",
-    full: "../images/Group1000005942.png",
+    thumb: "../singleproduct/mobile02.png",
+    full: "../singleproduct/mobile02.png",
   },
   {
-    thumb: "../images/Group1000005943.png",
-    full: "../images/Group1000005943.png",
+    thumb: "../singleproduct/mobile03.png",
+    full: "../singleproduct/mobile03.png",
   },
   {
-    thumb: "../images/Group1000005944.png",
-    full: "../images/Group1000005944.png",
+    thumb: "../singleproduct/mobile04.jpg",
+    full: "../singleproduct/mobile04.jpg",
   },
   {
-    thumb: "../images/Group1000005944.png",
-    full: "../images/Group1000005944.png",
-  },
-  {
-    thumb: "../images/Group1000005944.png",
-    full: "../images/Group1000005944.png",
-  },
-  {
-    thumb: "../images/Group1000005944.png",
-    full: "../images/Group1000005944.png",
+    thumb: "../singleproduct/mobile05.png",
+    full: "../singleproduct/mobile05.png",
   },
 ];
 
@@ -49,7 +41,7 @@ function showFullImage(image) {
 <template>
   <div>
     <div class="main-img">
-      <img class="w-full" :src="setImage" alt="Product Image" />
+      <img class="w-full object-cover h-[380px] md:h-[400px] rounded-md" :src="setImage" alt="Product Image" />
     </div>
     <div class="mt-4">
       <swiper
@@ -64,12 +56,12 @@ function showFullImage(image) {
         }"
         :breakpoints="{
           '300': {
-            slidesPerView: 4,
-            spaceBetween: 20,
+            slidesPerView: 3,
+            spaceBetween: 10,
           },
           '768': {
-            slidesPerView: 4,
-            spaceBetween: 20,
+            slidesPerView: 3,
+            spaceBetween: 10,
           },
           '1024': {
             slidesPerView: 4,
@@ -82,7 +74,7 @@ function showFullImage(image) {
         <swiper-slide v-for="(img, index) in images" :key="index">
           <img
             :src="img.thumb"
-            class="cursor-pointer mx-auto"
+            class="cursor-pointer object-cover h-32 rounded-md mx-auto"
             :key="img.thumb"
             @click="showFullImage(img)"
             alt="Thumbnail"
